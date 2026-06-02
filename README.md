@@ -6,7 +6,7 @@ Una guía completa, práctica y moderna para estudiantes de Ingeniería Informá
 
 Esta guía está publicada en GitHub Pages:
 
-**https://TU-USUARIO.github.io/design-web-guide/**
+**https://profcs-clases.github.io/design-web-guide/**
 
 ## 📚 Contenido
 
