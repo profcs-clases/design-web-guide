@@ -34,8 +34,7 @@
                 <a href="#antes-despues">Antes y Después</a>
                 <a href="#errores">Errores Comunes</a>
                 <a href="#glosario">Glosario</a>
-                <a href="#recursos">Recursos</a>
-                <a href="#github">GitHub Pages</a>
+                <a href="#recursos">Recursos</a>                
             </div>
             
             <div class="nav-section">
@@ -491,131 +490,6 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- GITHUB PAGES -->
-            <section id="github" class="module">
-                <div class="module-header">
-                    <span class="module-number">🚀</span>
-                    <div>
-                        <h2>Cómo publicar en GitHub Pages</h2>
-                        <p class="module-subtitle">Guía paso a paso para subir tu sitio</p>
-                    </div>
-                </div>
-
-                <div class="module-content">
-                    <p>
-                        GitHub Pages te permite publicar sitios web estáticos gratis directamente 
-                        desde un repositorio de GitHub. Perfecto para portafolios, documentación 
-                        y proyectos como esta guía.
-                    </p>
-
-                    <h3>Paso 1: Crear cuenta en GitHub</h3>
-                    <ol>
-                        <li>Ve a <a href="https://github.com" target="_blank">github.com</a></li>
-                        <li>Si no tienes cuenta, haz clic en <strong>"Sign up"</strong></li>
-                        <li>Completa el registro (es gratis)</li>
-                    </ol>
-
-                    <h3>Paso 2: Crear un nuevo repositorio</h3>
-                    <ol>
-                        <li>Haz clic en el botón <strong>"+"</strong> en la esquina superior derecha</li>
-                        <li>Selecciona <strong>"New repository"</strong></li>
-                        <li>Configura el repositorio:
-                            <ul>
-                                <li><strong>Repository name</strong>: <code>design-web-guide</code> (o el nombre que prefieras)</li>
-                                <li><strong>Description</strong>: "Guía de diseño de interfaces web"</li>
-                                <li><strong>Public</strong>: ✅ Marca esta opción (requerido para GitHub Pages gratis)</li>
-                                <li><strong>Add a README</strong>: ✅ Marca esta opción</li>
-                            </ul>
-                        </li>
-                        <li>Haz clic en <strong>"Create repository"</strong></li>
-                    </ol>
-
-                    <h3>Paso 3: Subir tus archivos</h3>
-                    <ol>
-                        <li>Dentro de tu nuevo repositorio, haz clic en <strong>"Add file"</strong> → <strong>"Upload files"</strong></li>
-                        <li>Arrastra todos los archivos del proyecto:
-                            <ul>
-                                <li><code>index.html</code></li>
-                                <li><code>html-css.html</code></li>
-                                <li><code>componentes.html</code></li>
-                                <li><code>avanzado.html</code></li>
-                                <li><code>extras.html</code></li>
-                                <li><code>styles.css</code></li>
-                                <li><code>script.js</code></li>
-                                <li><code>README.md</code></li>
-                            </ul>
-                        </li>
-                        <li>En el mensaje de commit, escribe: "Primera versión de la guía"</li>
-                        <li>Haz clic en <strong>"Commit changes"</strong></li>
-                    </ol>
-
-                    <h3>Paso 4: Activar GitHub Pages</h3>
-                    <ol>
-                        <li>Ve a la pestaña <strong>"Settings"</strong> del repositorio</li>
-                        <li>En el menú lateral izquierdo, busca y haz clic en <strong>"Pages"</strong></li>
-                        <li>En la sección <strong>"Build and deployment"</strong>:
-                            <ul>
-                                <li><strong>Source</strong>: Selecciona <strong>"Deploy from a branch"</strong></li>
-                                <li><strong>Branch</strong>: Selecciona <strong>"main"</strong> y <strong>"/ (root)"</strong></li>
-                            </ul>
-                        </li>
-                        <li>Haz clic en <strong>"Save"</strong></li>
-                    </ol>
-
-                    <h3>Paso 5: ¡Listo! Tu página está en línea</h3>
-                    <ol>
-                        <li>Espera 1-2 minutos mientras GitHub construye tu sitio</li>
-                        <li>Puedes ver el progreso en la pestaña <strong>"Actions"</strong> del repositorio</li>
-                        <li>Una vez completado, tu página estará disponible en:
-                            <br><code>https://TU-USUARIO.github.io/design-web-guide/</code>
-                        </li>
-                        <li>La URL también aparecerá en <strong>Settings → Pages</strong></li>
-                    </ol>
-
-                    <div class="callout callout-tip">
-                        <i class="fas fa-lightbulb"></i>
-                        <div>
-                            <strong>Para actualizar tu sitio:</strong> Solo edita cualquier archivo en GitHub 
-                            y haz commit. GitHub Pages se actualiza automáticamente en 1-2 minutos.
-                        </div>
-                    </div>
-
-                    <h3>Problemas comunes</h3>
-                    <div class="errors-list">
-                        <div class="error-item">
-                            <div class="error-icon">⏱️</div>
-                            <div class="error-content">
-                                <h4>La página no aparece después de 5 minutos</h4>
-                                <p><strong>Solución:</strong> Verifica en Actions que el deploy completó sin errores. 
-                                A veces toma hasta 10 minutos la primera vez.</p>
-                            </div>
-                        </div>
-                        <div class="error-item">
-                            <div class="error-icon">🔗</div>
-                            <div class="error-content">
-                                <h4>Los estilos CSS no cargan</h4>
-                                <p><strong>Solución:</strong> Asegúrate de que las rutas en los <code>&lt;link&gt;</code> 
-                                y <code>&lt;script&gt;</code> son relativas (sin <code>/</code> al inicio).</p>
-                            </div>
-                        </div>
-                        <div class="error-item">
-                            <div class="error-icon">📁</div>
-                            <div class="error-content">
-                                <h4>Página en blanco</h4>
-                                <p><strong>Solución:</strong> Verifica que tu archivo principal se llame 
-                                <code>index.html</code> (minúsculas, exactamente así).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="challenge">
-                    <h3><i class="fas fa-trophy"></i> Reto final</h3>
-                    <p>Publica esta guía completa en GitHub Pages y comparte el enlace con tus compañeros. 
-                    ¡Felicidades! Has creado y publicado una guía profesional de diseño web. 🎉</p>
                 </div>
             </section>
 
