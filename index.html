@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fundamentos de diseño de interfaces web: UX, UI y principios de diseño">
+    <title>Fundamentos UX/UI | Diseño de Interfaces Web</title>
+    
+    <!-- Prism.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar de navegación -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-palette"></i>
+                <span>UI/UX Guide</span>
+            </div>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h4>Esta sección</h4>
+                <a href="#intro" class="active">Introducción</a>
+                <a href="#ux-ui">UX vs UI</a>
+                <a href="#principios">Principios de Diseño</a>
+                <a href="#heuristicas">Heurísticas de Nielsen</a>
+                <a href="#colores">Psicología del Color</a>
+            </div>
+            
+            <div class="nav-section">
+                <h4>Otras secciones</h4>
+                <a href="html-css.html">HTML, CSS y Responsive</a>
+                <a href="componentes.html">Componentes y Librerías</a>
+                <a href="avanzado.html">Temas Avanzados</a>
+                <a href="extras.html">Extras y Recursos</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main">
+        
+        <!-- Topbar móvil -->
+        <div class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="topbar-title">Fundamentos UX/UI</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Parte 1 de 5</span>
+                <h1>Fundamentos de Diseño de Interfaces</h1>
+                <p class="hero-description">
+                    Aprende los principios fundamentales de UX y UI que transformarán 
+                    la forma en que diseñas aplicaciones web.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>5 Módulos</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>~45 min lectura</span>
+                    </div>
+                </div>
+                <div class="hero-nav">
+                    <a href="#intro" class="btn btn-primary">Comenzar</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenido -->
+        <div class="content">
+
+            <!-- ===== MÓDULO 1: INTRODUCCIÓN ===== -->
+            <section id="intro" class="module">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <div>
+                        <h2>Introducción al Diseño de Interfaces</h2>
+                        <p class="module-subtitle">¿Por qué importa cómo se ve y se siente tu aplicación?</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Has escrito el código más elegante del mundo. Tu base de datos está normalizada, 
+                        tus algoritmos son óptimos y tu backend responde en milisegundos. Pero... 
+                        <strong>el usuario no puede encontrar el botón de "Guardar"</strong>.
+                    </p>
+                    <p>
+                        <strong>Toda tu obra maestra técnica es inútil si la interfaz es mala.</strong> 
+                        El diseño de interfaces no es "hacer que se vea bonito". Es construir puentes 
+                        entre la lógica de tu sistema y la mente del usuario.
+                    </p>
+
+                    <div class="callout callout-info">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Dato importante:</strong> Un estudio de IBM estima que cada $1 invertido 
+                            en UX retorna entre $10 y $100. La interfaz es el producto.
+                        </div>
+                    </div>
+
+                    <h3>¿Qué vamos a aprender en esta guía?</h3>
+                    <div class="learning-grid">
+                        <div class="learning-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Teoría</h4>
+                            <p>Principios de UX/UI, heurísticas, psicología del color</p>
+                        </div>
+                        <div class="learning-item">
+                            <i class="fas fa-code"></i>
+                            <h4>Implementación</h4>
+                            <p>HTML semántico, CSS moderno, JavaScript interactivo</p>
+                        </div>
+                        <div class="learning-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h4>Componentes</h4>
+                            <p>Formularios, tablas, modales, validaciones</p>
+                        </div>
+                        <div class="learning-item">
+                            <i class="fas fa-universal-access"></i>
+                            <h4>Buenas prácticas</h4>
+                            <p>Accesibilidad, rendimiento, mobile-first</p>
+                        </div>
+                    </div>
+
+                    <h3>¿Para quién es esta guía?</h3>
+                    <p>
+                        Esta guía está diseñada para estudiantes de ingeniería que necesitan crear 
+                        sistemas administrativos funcionales y usables. No eres diseñador gráfico, 
+                        pero necesitas saber cómo presentar información de forma clara y eficiente.
+                    </p>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Abre cualquier sitio web que uses frecuentemente (tu correo, una red social, tu banco). 
+                    Identifica 3 cosas que hacen fácil usarlo y 3 cosas que te frustran. Anótalas.</p>
+                </div>
+            </section>
+
+            <!-- ===== MÓDULO 2: UX vs UI ===== -->
+            <section id="ux-ui" class="module">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <div>
+                        <h2>UX vs UI: Dos disciplinas, un objetivo</h2>
+                        <p class="module-subtitle">Entendiendo la diferencia fundamental</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Mucha gente usa UX y UI como sinónimos, pero son disciplinas distintas 
+                        que trabajan juntas.
+                    </p>
+
+                    <div class="comparison">
+                        <div class="comparison-item">
+                            <div class="comparison-icon ux">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <h3>UX (User Experience)</h3>
+                            <p class="comparison-subtitle">Experiencia de Usuario</p>
+                            <p><strong>Se enfoca en:</strong> Cómo se siente usar el producto</p>
+                            <ul>
+                                <li>Investigación de usuarios</li>
+                                <li>Arquitectura de información</li>
+                                <li>Flujos de navegación</li>
+                                <li>Usabilidad y eficiencia</li>
+                                <li>Resolución de problemas</li>
+                            </ul>
+                            <div class="comparison-analogy">
+                                <strong>Analogía:</strong> El plano de una casa (¿las habitaciones están bien distribuidas?)
+                            </div>
+                        </div>
+
+                        <div class="comparison-item">
+                            <div class="comparison-icon ui">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>UI (User Interface)</h3>
+                            <p class="comparison-subtitle">Interfaz de Usuario</p>
+                            <p><strong>Se enfoca en:</strong> Cómo se ve el producto</p>
+                            <ul>
+                                <li>Diseño visual</li>
+                                <li>Tipografía y colores</li>
+                                <li>Iconografía</li>
+                                <li>Animaciones</li>
+                                <li>Consistencia estética</li>
+                            </ul>
+                            <div class="comparison-analogy">
+                                <strong>Analogía:</strong> La decoración de la casa (¿los colores y muebles son armoniosos?)
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Ejemplo práctico</h3>
+                    <div class="example-box">
+                        <h4>Imagina una aplicación de banca en línea:</h4>
+                        <ul>
+                            <li><strong>UX:</strong> ¿Es fácil transferir dinero? ¿Cuántos clics toma? ¿El usuario entiende cada paso?</li>
+                            <li><strong>UI:</strong> ¿Los botones son claros? ¿Los colores transmiten confianza? ¿La tipografía es legible?</li>
+                        </ul>
+                        <p><strong>Ambos son cruciales.</strong> Puedes tener un flujo perfecto (UX) pero con botones feos (UI), 
+                        o botones hermosos (UI) pero con un flujo confuso (UX).</p>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <i class="fas fa-hand-point-right"></i>
+                        <div>
+                            <strong>Regla mental:</strong> Una interfaz puede ser hermosa (buen UI) pero 
+                            imposible de usar (mal UX). O puede ser fea pero extremadamente funcional. 
+                            <strong>El objetivo es lograr ambos.</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Encuentra un ejemplo real de cada caso:</p>
+                    <ul>
+                        <li>Un sitio con <strong>buen UX pero mal UI</strong> (funciona bien pero se ve feo)</li>
+                        <li>Un sitio con <strong>buen UI pero mal UX</strong> (se ve hermoso pero es confuso)</li>
+                    </ul>
+                    <p>Comparte tus ejemplos con la clase.</p>
+                </div>
+            </section>
+
+            <!-- ===== MÓDULO 3: PRINCIPIOS DE DISEÑO ===== -->
+            <section id="principios" class="module">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <div>
+                        <h2>Principios Fundamentales de Diseño</h2>
+                        <p class="module-subtitle">Las reglas no escritas de una buena interfaz</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Antes de abrir tu editor de código, necesitas entender los principios 
+                        que guían el diseño efectivo. Estos no son sugerencias, son fundamentos.
+                    </p>
+
+                    <h3>1. Consistencia</h3>
+                    <p>
+                        Los elementos similares deben verse y comportarse de manera similar. 
+                        Si un botón es azul y redondeado en una página, debe ser igual en todas.
+                    </p>
+                    <div class="example-box">
+                        <strong>Ejemplo:</strong> Si usas rojo para "Eliminar" en un módulo, 
+                        no uses verde en otro. La consistencia reduce la carga cognitiva.
+                    </div>
+
+                    <h3>2. Retroalimentación</h3>
+                    <p>
+                        Cada acción del usuario debe tener una respuesta visible inmediata.
+                    </p>
+                    <div class="example-box">
+                        <strong>Bueno:</strong> Botón cambia de color al hacer hover, muestra spinner al procesar, 
+                        toast de éxito al completar.<br>
+                        <strong>Malo:</strong> Usuario hace clic y no pasa nada visible durante 3 segundos.
+                    </div>
+
+                    <h3>3. Prevención de errores</h3>
+                    <p>
+                        Es mejor prevenir errores que mostrar mensajes de error.
+                    </p>
+                    <div class="example-box">
+                        <strong>Prevención:</strong> Deshabilitar el botón "Eliminar" si no hay registros seleccionados.<br>
+                        <strong>Reacción:</strong> Mostrar "Error: No se puede eliminar" después de hacer clic.
+                    </div>
+
+                    <h3>4. Jerarquía visual</h3>
+                    <p>
+                        Los elementos más importantes deben destacar visualmente.
+                    </p>
+                    <div class="example-box">
+                        <strong>Cómo lograrlo:</strong>
+                        <ul>
+                            <li>Tamaño: títulos más grandes</li>
+                            <li>Color: acciones principales en color primario</li>
+                            <li>Espacio: más margen alrededor de elementos importantes</li>
+                            <li>Contraste: texto oscuro sobre fondo claro</li>
+                        </ul>
+                    </div>
+
+                    <h3>5. Simplificación</h3>
+                    <p>
+                        Elimina todo lo que no sea esencial. Cada elemento debe tener un propósito.
+                    </p>
+                    <div class="callout callout-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Error común:</strong> Agregar decoraciones, gradientes, animaciones 
+                            y efectos solo porque "se ven bien". Si no ayudan al usuario, estorban.
+                        </div>
+                    </div>
+
+                    <h3>6. Tolerancia a errores</h3>
+                    <p>
+                        Los usuarios cometerán errores. Tu interfaz debe permitir deshacer acciones fácilmente.
+                    </p>
+                    <div class="example-box">
+                        <strong>Bueno:</strong> "Registro eliminado" con botón "Deshacer" durante 5 segundos.<br>
+                        <strong>Malo:</strong> "¿Está seguro?" → "¿Realmente seguro?" → "Última oportunidad" → Eliminado.
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Elige 2 principios de los 6 vistos. Busca un sitio web que los cumpla bien 
+                    y otro que los viole. Documenta con capturas de pantalla.</p>
+                </div>
+            </section>
+
+            <!-- ===== MÓDULO 4: HEURÍSTICAS DE NIELSEN ===== -->
+            <section id="heuristicas" class="module">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <div>
+                        <h2>Las 10 Heurísticas de Nielsen</h2>
+                        <p class="module-subtitle">El estándar de oro en usabilidad</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Jakob Nielsen, pionero en usabilidad, definió 10 principios en 1994 que 
+                        siguen siendo el estándar de la industria. Son tu checklist de calidad.
+                    </p>
+
+                    <div class="heuristics">
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">01</span>
+                            <h4>Visibilidad del estado del sistema</h4>
+                            <p>El sistema siempre debe informar al usuario qué está pasando mediante retroalimentación adecuada y en tiempo razonable.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Barra de progreso al subir un archivo, 
+                                spinner al procesar, mensaje de "Guardando..." al hacer clic.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">02</span>
+                            <h4>Relación entre el sistema y el mundo real</h4>
+                            <p>El sistema debe hablar el idioma de los usuarios, con palabras, frases y conceptos familiares.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Usar "Cédula" en lugar de "ID", 
+                                "Inscribir" en lugar de "Create Record", iconos de carpeta para archivos.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">03</span>
+                            <h4>Control y libertad del usuario</h4>
+                            <p>Los usuarios realizan acciones por error. Necesitan una "salida de emergencia" claramente marcada.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Botón "Cancelar" en formularios, 
+                                "Deshacer" después de eliminar, poder cerrar modales con ESC.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">04</span>
+                            <h4>Consistencia y estándares</h4>
+                            <p>Sigue las convenciones de la plataforma. Los usuarios no deberían preguntarse si diferentes palabras o acciones significan lo mismo.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> El logo siempre lleva al inicio, 
+                                el botón primario siempre es azul, los iconos de editar/eliminar son universales.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">05</span>
+                            <h4>Prevención de errores</h4>
+                            <p>Mejor que un buen mensaje de error es un diseño cuidadoso que prevenga problemas.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Confirmación antes de eliminar, 
+                                validación en tiempo real, deshabilitar botones cuando no aplica.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">06</span>
+                            <h4>Reconocer en lugar de recordar</h4>
+                            <p>Minimiza la carga de memoria. Las instrucciones deben ser visibles o fácilmente recuperables.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Menús visibles (no escondidos), 
+                                autocompletado en búsquedas, breadcrumbs para navegación.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">07</span>
+                            <h4>Flexibilidad y eficiencia de uso</h4>
+                            <p>Aceleradores para usuarios expertos, simplicidad para principiantes.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Atajos de teclado (Ctrl+S para guardar), 
+                                búsqueda rápida, filtros avanzados opcionales.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">08</span>
+                            <h4>Diseño estético y minimalista</h4>
+                            <p>Los diálogos no deben contener información irrelevante o rara vez necesaria.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Formularios con solo campos esenciales, 
+                                modales con un solo mensaje claro, sin decoraciones innecesarias.
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">09</span>
+                            <h4>Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores</h4>
+                            <p>Los mensajes de error deben expresarse en lenguaje claro, indicar el problema con precisión y sugerir una solución.</p>
+                            <div class="heuristic-example">
+                                <strong>Bueno:</strong> "La cédula debe tener formato V-12345678. Por favor corrige."<br>
+                                <strong>Malo:</strong> "Error 400: Invalid input format"
+                            </div>
+                        </div>
+
+                        <div class="heuristic-card">
+                            <span class="heuristic-number">10</span>
+                            <h4>Ayuda y documentación</h4>
+                            <p>Aunque es mejor si el sistema no necesita explicación, puede ser necesario proporcionar ayuda.</p>
+                            <div class="heuristic-example">
+                                <strong>Ejemplo:</strong> Tooltips en campos complejos, 
+                                sección de ayuda contextual, FAQs accesibles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <i class="fas fa-clipboard-check"></i>
+                        <div>
+                            <strong>Usa estas heurísticas como checklist:</strong> Antes de entregar 
+                            cualquier interfaz, recorre las 10 y pregúntate: "¿Mi diseño cumple esto?". 
+                            Si fallas en 3 o más, necesitas rediseñar.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Evalúa tu red social favorita contra las 10 heurísticas de Nielsen. 
+                    ¿En cuántas cumple? ¿En cuáles falla? Escribe un informe de 1 página.</p>
+                </div>
+            </section>
+
+            <!-- ===== MÓDULO 5: PSICOLOGÍA DEL COLOR ===== -->
+            <section id="colores" class="module">
+                <div class="module-header">
+                    <span class="module-number">05</span>
+                    <div>
+                        <h2>Psicología del Color en Interfaces</h2>
+                        <p class="module-subtitle">El color es comunicación, no decoración</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Los colores no son arbitrarios. Cada color transmite un mensaje y evoca 
+                        emociones. En sistemas administrativos, el uso correcto del color es crucial.
+                    </p>
+
+                    <h3>Significado universal de colores</h3>
+                    <div class="color-grid">
+                        <div class="color-card" style="--color: #10b981;">
+                            <div class="color-swatch"></div>
+                            <h4>Verde</h4>
+                            <p class="color-meaning">Éxito, confirmación, aprobado, activo</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Mensajes de éxito, botones de guardar, estados activos</p>
+                        </div>
+                        <div class="color-card" style="--color: #ef4444;">
+                            <div class="color-swatch"></div>
+                            <h4>Rojo</h4>
+                            <p class="color-meaning">Error, peligro, eliminar, crítico</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Mensajes de error, botones de eliminar, alertas críticas</p>
+                        </div>
+                        <div class="color-card" style="--color: #f59e0b;">
+                            <div class="color-swatch"></div>
+                            <h4>Ámbar/Amarillo</h4>
+                            <p class="color-meaning">Advertencia, atención, pendiente</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Advertencias, estados pendientes, revisiones necesarias</p>
+                        </div>
+                        <div class="color-card" style="--color: #3b82f6;">
+                            <div class="color-swatch"></div>
+                            <h4>Azul</h4>
+                            <p class="color-meaning">Información, acción principal, confianza</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Botones primarios, enlaces, información neutra</p>
+                        </div>
+                        <div class="color-card" style="--color: #6b7280;">
+                            <div class="color-swatch"></div>
+                            <h4>Gris</h4>
+                            <p class="color-meaning">Neutral, deshabilitado, secundario</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Botones secundarios, texto menos importante, bordes</p>
+                        </div>
+                        <div class="color-card" style="--color: #8b5cf6;">
+                            <div class="color-swatch"></div>
+                            <h4>Púrpura</h4>
+                            <p class="color-meaning">Creatividad, premium, especial</p>
+                            <p class="color-usage"><strong>Úsalo para:</strong> Funcionalidades especiales, badges premium</p>
+                        </div>
+                    </div>
+
+                    <h3>Reglas de oro del color</h3>
+                    <div class="principles">
+                        <div class="principle">
+                            <i class="fas fa-palette"></i>
+                            <h4>Menos es más</h4>
+                            <p>Usa máximo 3-5 colores en toda tu interfaz</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-eye"></i>
+                            <h4>Contraste adecuado</h4>
+                            <p>Texto debe ser legible (ratio mínimo 4.5:1)</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-universal-access"></i>
+                            <h4>No dependas solo del color</h4>
+                            <p>Añade iconos o texto para daltónicos</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-industry"></i>
+                            <h4>Consistencia semántica</h4>
+                            <p>Rojo siempre = peligro/eliminar en todo el sistema</p>
+                        </div>
+                    </div>
+
+                    <h3>Ejemplo: Estados de un registro</h3>
+                    <div class="status-example">
+                        <div class="status-item status-active">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Activo</span>
+                        </div>
+                        <div class="status-item status-pending">
+                            <i class="fas fa-clock"></i>
+                            <span>Pendiente</span>
+                        </div>
+                        <div class="status-item status-inactive">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Inactivo</span>
+                        </div>
+                        <div class="status-item status-suspended">
+                            <i class="fas fa-ban"></i>
+                            <span>Suspendido</span>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Cuidado con el rojo:</strong> En sistemas educativos, NO uses rojo 
+                            indiscriminadamente para notas bajas. Puede generar ansiedad. Usa colores 
+                            más sutiles o enfócate en el progreso, no en el fracaso.
+                        </div>
+                    </div>
+
+                    <h3>Herramientas para paletas de colores</h3>
+                    <ul>
+                        <li><strong>Coolors.co</strong> - Generador de paletas</li>
+                        <li><strong>Adobe Color</strong> - Paletas profesionales</li>
+                        <li><strong>Color Hunt</strong> - Paletas curadas por la comunidad</li>
+                        <li><strong>Contrast Ratio</strong> - Verifica accesibilidad de colores</li>
+                    </ul>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Diseña una paleta de 5 colores para un sistema administrativo institucional:
+                    <br>• 1 color primario (acción principal)
+                    <br>• 1 color secundario (acciones secundarias)
+                    <br>• 1 color de éxito
+                    <br>• 1 color de advertencia
+                    <br>• 1 color de error
+                    <br>Verifica que todos tengan contraste adecuado con fondo blanco.</p>
+                </div>
+            </section>
+
+            <!-- Navegación entre secciones -->
+            <nav class="section-nav">
+                <div class="section-nav-prev">
+                    <span>Anterior</span>
+                    <span class="disabled">Inicio</span>
+                </div>
+                <div class="section-nav-next">
+                    <span>Siguiente</span>
+                    <a href="html-css.html" class="btn btn-primary">
+                        HTML, CSS y Responsive <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </main>
+
+    <!-- Botón scroll to top -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

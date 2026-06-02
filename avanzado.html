@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temas avanzados: accesibilidad, mobile-first, modo oscuro y rendimiento">
+    <title>Temas Avanzados | Diseño de Interfaces Web</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-palette"></i>
+                <span>UI/UX Guide</span>
+            </div>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h4>Esta sección</h4>
+                <a href="#accesibilidad">Accesibilidad</a>
+                <a href="#mobile-first">Mobile-First</a>
+                <a href="#dark-mode">Modo Oscuro</a>
+                <a href="#performance">Rendimiento</a>
+            </div>
+            
+            <div class="nav-section">
+                <h4>Otras secciones</h4>
+                <a href="index.html">Fundamentos UX/UI</a>
+                <a href="html-css.html">HTML, CSS y Responsive</a>
+                <a href="componentes.html">Componentes y Librerías</a>
+                <a href="extras.html">Extras y Recursos</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        
+        <div class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="topbar-title">Temas Avanzados</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <header class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Parte 4 de 5</span>
+                <h1>Temas Avanzados</h1>
+                <p class="hero-description">
+                    Accesibilidad, mobile-first profundo, modo oscuro y optimización de rendimiento: 
+                    lo que separa una buena interfaz de una excelente.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>4 Módulos</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>~1h lectura</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- MÓDULO: Accesibilidad -->
+            <section id="accesibilidad" class="module">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <div>
+                        <h2>Accesibilidad Web (WCAG)</h2>
+                        <p class="module-subtitle">La web es para todos</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        La accesibilidad no es opcional. Es un derecho y, en muchos países, 
+                        una obligación legal. Además, beneficia a todos los usuarios.
+                    </p>
+
+                    <h3>Los 4 principios POUR</h3>
+                    <div class="pour-grid">
+                        <div class="pour-card">
+                            <div class="pour-letter">P</div>
+                            <h4>Perceptible</h4>
+                            <p>La información debe presentarse de formas que el usuario pueda percibir</p>
+                        </div>
+                        <div class="pour-card">
+                            <div class="pour-letter">O</div>
+                            <h4>Operable</h4>
+                            <p>Los componentes deben ser operables por todos los usuarios</p>
+                        </div>
+                        <div class="pour-card">
+                            <div class="pour-letter">U</div>
+                            <h4>Comprensible</h4>
+                            <p>La información y el manejo de la UI deben ser comprensibles</p>
+                        </div>
+                        <div class="pour-card">
+                            <div class="pour-letter">R</div>
+                            <h4>Robusto</h4>
+                            <p>El contenido debe ser interpretable por diversas tecnologías</p>
+                        </div>
+                    </div>
+
+                    <h3>Checklist esencial</h3>
+                    <div class="checklist">
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Etiquetas en formularios</strong>
+                                <p>Cada input debe tener un <code>&lt;label&gt;</code> asociado</p>
+                            </div>
+                        </div>
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Textos alternativos</strong>
+                                <p>Toda imagen informativa necesita <code>alt</code></p>
+                            </div>
+                        </div>
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Contraste adecuado</strong>
+                                <p>Ratio mínimo 4.5:1 para texto normal</p>
+                            </div>
+                        </div>
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Navegación por teclado</strong>
+                                <p>Todo debe ser usable sin mouse (Tab, Enter, Esc)</p>
+                            </div>
+                        </div>
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Estructura de encabezados</strong>
+                                <p>Un solo <code>&lt;h1&gt;</code>, jerarquía lógica h2→h3→h4</p>
+                            </div>
+                        </div>
+                        <div class="check-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Atributos ARIA cuando sea necesario</strong>
+                                <p><code>aria-label</code>, <code>aria-describedby</code>, <code>role</code></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Ejemplo: Botón accesible</h3>
+                    <div class="comparison-inline">
+                        <div class="comparison-bad">
+                            <h4><i class="fas fa-times"></i> Mal: sin contexto</h4>
+                            <pre><code class="language-html">&lt;button&gt;
+    &lt;i class="fas fa-trash"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="comparison-good">
+                            <h4><i class="fas fa-check"></i> Bien: con label accesible</h4>
+                            <pre><code class="language-html">&lt;button aria-label="Eliminar registro"&gt;
+    &lt;i class="fas fa-trash" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h3>Herramientas de auditoría</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-lighthouse"></i> Lighthouse</h4>
+                            <p>Integrado en Chrome DevTools. Auditoría completa de accesibilidad.</p>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-wave-square"></i> WAVE</h4>
+                            <p>Extensión de navegador que marca errores de accesibilidad.</p>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-axe"></i> axe DevTools</h4>
+                            <p>Análisis automatizado avanzado con sugerencias de corrección.</p>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-universal-access"></i> NVDA / VoiceOver</h4>
+                            <p>Lectores de pantalla reales. Pruébalos siempre.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Desconecta tu mouse. Intenta navegar un sitio web que hayas hecho usando 
+                    solo Tab, Enter y Esc. ¿Puedes completar las acciones principales? 
+                    Si no, identifica 3 problemas.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Mobile-First -->
+            <section id="mobile-first" class="module">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <div>
+                        <h2>Diseño Mobile-First Profundo</h2>
+                        <p class="module-subtitle">Pensar en pequeño primero</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Mobile-first no es solo "hacer que se vea bien en el celular". 
+                        Es una filosofía de diseño que prioriza lo esencial.
+                    </p>
+
+                    <h3>Principios mobile-first</h3>
+                    <div class="principles">
+                        <div class="principle">
+                            <i class="fas fa-compress-alt"></i>
+                            <h4>Jerarquía estricta</h4>
+                            <p>Si no cabe en móvil, probablemente no es esencial</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-hand-pointer"></i>
+                            <h4>Touch-friendly</h4>
+                            <p>Objetos interactivos mínimo 44x44px</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Velocidad primero</h4>
+                            <p>En móvil, cada KB cuenta</p>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-thumbs-up"></i>
+                            <h4>Gestos naturales</h4>
+                            <p>Swipe, pinch, tap (no hover)</p>
+                        </div>
+                    </div>
+
+                    <h3>Tablas en móvil: de horizontal a tarjetas</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">/* En móvil: convierte tabla en tarjetas */
+@media (max-width: 768px) {
+    .table-cards table,
+    .table-cards thead,
+    .table-cards tbody,
+    .table-cards th,
+    .table-cards td,
+    .table-cards tr {
+        display: block;
+    }
+    
+    .table-cards thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .table-cards tr {
+        border: 1px solid var(--color-border);
+        margin-bottom: 1rem;
+        border-radius: var(--radius-md);
+    }
+    
+    .table-cards td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .table-cards td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        font-weight: 600;
+    }
+}</code></pre>
+                    </div>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- Uso: agrega data-label a cada celda --&gt;
+&lt;table class="table-cards"&gt;
+    &lt;tr&gt;
+        &lt;td data-label="Nombre"&gt;Juan Pérez&lt;/td&gt;
+        &lt;td data-label="Cédula"&gt;V-12345678&lt;/td&gt;
+        &lt;td data-label="Teléfono"&gt;0414-1234567&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <i class="fas fa-hand-point-right"></i>
+                        <div>
+                            <strong>Prueba siempre en dispositivo real.</strong> Las devtools del navegador 
+                            son útiles, pero no reemplazan probar en un móvil real con conexión lenta.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Toma una tabla de 5 columnas y conviértela en tarjetas para móvil 
+                    usando la técnica de <code>data-label</code>.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Modo Oscuro -->
+            <section id="dark-mode" class="module">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <div>
+                        <h2>Modo Oscuro / Claro</h2>
+                        <p class="module-subtitle">Respeta las preferencias del usuario</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        El modo oscuro no es solo una moda: reduce fatiga visual, ahorra batería 
+                        en pantallas OLED y es una preferencia personal legítima.
+                    </p>
+
+                    <h3>Implementación con variables CSS</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">:root {
+    /* Tema claro (por defecto) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+}
+
+/* Modo oscuro automático (preferencia del sistema) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #111827;
+        --bg-secondary: #1f2937;
+        --text-primary: #f9fafb;
+        --text-secondary: #9ca3af;
+        --border: #374151;
+    }
+}
+
+/* Modo oscuro manual (clase en body) */
+[data-theme="dark"] {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border: #374151;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}</code></pre>
+                    </div>
+
+                    <h3>Toggle de tema con JavaScript</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">class ThemeManager {
+    constructor() {
+        this.theme = this.getTheme();
+        this.applyTheme();
+    }
+    
+    getTheme() {
+        // Prioridad: localStorage > preferencia del sistema > claro
+        const saved = localStorage.getItem('theme');
+        if (saved) return saved;
+        
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    }
+    
+    applyTheme() {
+        document.documentElement.setAttribute('data-theme', this.theme);
+    }
+    
+    toggle() {
+        this.theme = this.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', this.theme);
+        this.applyTheme();
+    }
+}
+
+const themeManager = new ThemeManager();
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    themeManager.toggle();
+});</code></pre>
+                    </div>
+
+                    <h3>Consideraciones importantes</h3>
+                    <div class="callout callout-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <ul>
+                                <li><strong>No uses negro puro (#000)</strong>: usa grises oscuros (#111, #1f2937)</li>
+                                <li><strong>Reduce contraste</strong>: no uses texto blanco brillante</li>
+                                <li><strong>Imágenes</strong>: algunas pueden verse muy brillantes en modo oscuro</li>
+                                <li><strong>Sombras</strong>: en oscuro, usa bordes sutiles en lugar de sombras</li>
+                                <li><strong>Iconos</strong>: asegura que funcionen en ambos temas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Implementa el toggle de modo oscuro con persistencia en localStorage. 
+                    Asegúrate de que todo tu CSS use variables para que el cambio sea instantáneo.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Rendimiento -->
+            <section id="performance" class="module">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <div>
+                        <h2>Optimización de Rendimiento</h2>
+                        <p class="module-subtitle">Una interfaz lenta es una interfaz rota</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Cada segundo de carga adicional reduce conversiones en 7%. 
+                        En conexiones lentas, la optimización es crítica.
+                    </p>
+
+                    <h3>Imágenes: el enemigo #1</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- Formato moderno --&gt;
+&lt;picture&gt;
+    &lt;source srcset="imagen.avif" type="image/avif"&gt;
+    &lt;source srcset="imagen.webp" type="image/webp"&gt;
+    &lt;img src="imagen.jpg" alt="Descripción" loading="lazy"&gt;
+&lt;/picture&gt;
+
+&lt;!-- Lazy loading nativo --&gt;
+&lt;img src="foto.jpg" loading="lazy" alt="..."&gt;
+
+&lt;!-- Responsive images --&gt;
+&lt;img 
+    srcset="foto-400.jpg 400w, foto-800.jpg 800w, foto-1200.jpg 1200w"
+    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+    src="foto-800.jpg"
+    alt="..."
+&gt;</code></pre>
+                    </div>
+
+                    <h3>CSS y JS optimizados</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- CSS crítico en head --&gt;
+&lt;style&gt;
+    /* Solo lo esencial para el primer render */
+    body { margin: 0; font-family: sans-serif; }
+    .header { ... }
+&lt;/style&gt;
+
+&lt;!-- CSS no crítico con preload --&gt;
+&lt;link rel="preload" href="styles.css" as="style" 
+      onload="this.onload=null;this.rel='stylesheet'"&gt;
+
+&lt;!-- JS al final o con defer --&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3>Métricas clave (Core Web Vitals)</h3>
+                    <div class="data-table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Métrica</th>
+                                    <th>Qué mide</th>
+                                    <th>Objetivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>LCP</strong></td>
+                                    <td>Largest Contentful Paint</td>
+                                    <td>&lt; 2.5s</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FID</strong></td>
+                                    <td>First Input Delay</td>
+                                    <td>&lt; 100ms</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLS</strong></td>
+                                    <td>Cumulative Layout Shift</td>
+                                    <td>&lt; 0.1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Herramientas de medición</h3>
+                    <ul>
+                        <li><strong>Lighthouse</strong> - Auditoría completa (Chrome DevTools)</li>
+                        <li><strong>PageSpeed Insights</strong> - Análisis web de Google</li>
+                        <li><strong>WebPageTest</strong> - Pruebas desde múltiples ubicaciones</li>
+                        <li><strong>GTmetrix</strong> - Análisis detallado de rendimiento</li>
+                    </ul>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Ejecuta Lighthouse en una página web que hayas hecho. 
+                    Identifica los 3 problemas principales de rendimiento y propón soluciones.</p>
+                </div>
+            </section>
+
+            <!-- Navegación entre secciones -->
+            <nav class="section-nav">
+                <div class="section-nav-prev">
+                    <span>Anterior</span>
+                    <a href="componentes.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Componentes y Librerías
+                    </a>
+                </div>
+                <div class="section-nav-next">
+                    <span>Siguiente</span>
+                    <a href="extras.html" class="btn btn-primary">
+                        Extras y Recursos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </main>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

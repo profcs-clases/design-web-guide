@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Extras: antes/después, errores comunes, glosario, recursos y guía de GitHub Pages">
+    <title>Extras y Recursos | Diseño de Interfaces Web</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-palette"></i>
+                <span>UI/UX Guide</span>
+            </div>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h4>Esta sección</h4>
+                <a href="#antes-despues">Antes y Después</a>
+                <a href="#errores">Errores Comunes</a>
+                <a href="#glosario">Glosario</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#github">GitHub Pages</a>
+            </div>
+            
+            <div class="nav-section">
+                <h4>Otras secciones</h4>
+                <a href="index.html">Fundamentos UX/UI</a>
+                <a href="html-css.html">HTML, CSS y Responsive</a>
+                <a href="componentes.html">Componentes y Librerías</a>
+                <a href="avanzado.html">Temas Avanzados</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        
+        <div class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="topbar-title">Extras y Recursos</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <header class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Parte 5 de 5</span>
+                <h1>Extras y Recursos</h1>
+                <p class="hero-description">
+                    Casos reales, errores comunes, glosario completo, recursos recomendados 
+                    y guía paso a paso para publicar tu sitio en GitHub Pages.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>5 Secciones</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>~45 min lectura</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- ANTES Y DESPUÉS -->
+            <section id="antes-despues" class="module">
+                <div class="module-header">
+                    <span class="module-number">⭐</span>
+                    <div>
+                        <h2>Antes y Después</h2>
+                        <p class="module-subtitle">El poder del buen diseño</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Veamos cómo pequeños cambios pueden transformar completamente una interfaz.
+                    </p>
+
+                    <h3>Ejemplo 1: Formulario de registro</h3>
+                    
+                    <div class="before-after">
+                        <div class="before-card">
+                            <div class="ba-label">❌ Antes</div>
+                            <div class="ba-content ba-bad">
+                                <form class="bad-form">
+                                    <input type="text" placeholder="Nombre">
+                                    <input type="text" placeholder="Cédula">
+                                    <input type="text" placeholder="Teléfono">
+                                    <input type="text" placeholder="Email">
+                                    <select>
+                                        <option>Año</option>
+                                    </select>
+                                    <input type="submit" value="ENVIAR">
+                                </form>
+                            </div>
+                            <ul class="ba-problems">
+                                <li>Sin labels</li>
+                                <li>Sin validación</li>
+                                <li>Sin agrupación</li>
+                                <li>Sin feedback</li>
+                                <li>Botón poco claro</li>
+                            </ul>
+                        </div>
+                        <div class="after-card">
+                            <div class="ba-label">✅ Después</div>
+                            <div class="ba-content ba-good">
+                                <form class="good-form">
+                                    <fieldset>
+                                        <legend>Datos personales</legend>
+                                        <div class="form-group">
+                                            <label>Nombre completo</label>
+                                            <input type="text" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Cédula</label>
+                                            <input type="text" placeholder="V-12345678">
+                                        </div>
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                </form>
+                            </div>
+                            <ul class="ba-benefits">
+                                <li>Labels descriptivos</li>
+                                <li>Validación nativa</li>
+                                <li>Agrupación lógica</li>
+                                <li>Feedback visual</li>
+                                <li>Botón claro</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Ejemplo 2: Tabla de datos</h3>
+                    
+                    <div class="before-after">
+                        <div class="before-card">
+                            <div class="ba-label">❌ Antes</div>
+                            <div class="ba-content ba-bad">
+                                <table class="bad-table">
+                                    <tr>
+                                        <th>ID</th><th>Nombre</th><th>Edad</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td><td>Juan</td><td>20</td>
+                                        <td><a href="#">Editar</a> | <a href="#">Eliminar</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <ul class="ba-problems">
+                                <li>Sin búsqueda</li>
+                                <li>Sin paginación</li>
+                                <li>Columna ID innecesaria</li>
+                                <li>Acciones peligrosas</li>
+                            </ul>
+                        </div>
+                        <div class="after-card">
+                            <div class="ba-label">✅ Después</div>
+                            <div class="ba-content ba-good">
+                                <div class="good-table-wrapper">
+                                    <div class="table-controls">
+                                        <input type="search" placeholder="Buscar...">
+                                        <button class="btn btn-primary">+ Nuevo</button>
+                                    </div>
+                                    <table class="good-table">
+                                        <tr><th>Nombre</th><th>Edad</th><th>Acciones</th></tr>
+                                        <tr>
+                                            <td>Juan Pérez</td><td>20 años</td>
+                                            <td>
+                                                <button class="btn-icon">✏️</button>
+                                                <button class="btn-icon">🗑️</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <ul class="ba-benefits">
+                                <li>Búsqueda integrada</li>
+                                <li>Paginación</li>
+                                <li>Solo datos útiles</li>
+                                <li>Confirmación antes de eliminar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Toma una interfaz "fea" que hayas hecho antes. Rediseñala aplicando al menos 
+                    5 de los principios vistos en esta guía. Documenta el antes y el después.</p>
+                </div>
+            </section>
+
+            <!-- ERRORES COMUNES -->
+            <section id="errores" class="module">
+                <div class="module-header">
+                    <span class="module-number">⚠️</span>
+                    <div>
+                        <h2>Errores Comunes en Interfaces Administrativas</h2>
+                        <p class="module-subtitle">Lo que NO debes hacer</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Después de años viendo sistemas administrativos, estos son los errores 
+                        más frecuentes que debes evitar.
+                    </p>
+
+                    <div class="errors-list">
+                        <div class="error-item">
+                            <div class="error-icon">🚨</div>
+                            <div class="error-content">
+                                <h4>Eliminar sin confirmación</h4>
+                                <p><strong>Error:</strong> Botón de eliminar que ejecuta la acción inmediatamente</p>
+                                <p><strong>Solución:</strong> Siempre pide confirmación, idealmente con el nombre del registro</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">🔄</div>
+                            <div class="error-content">
+                                <h4>Formularios que se borran al recargar</h4>
+                                <p><strong>Error:</strong> El usuario llena 20 campos, la página recarga, todo se pierde</p>
+                                <p><strong>Solución:</strong> Guarda el estado en sessionStorage o usa localStorage</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">⏳</div>
+                            <div class="error-content">
+                                <h4>Sin feedback de carga</h4>
+                                <p><strong>Error:</strong> El usuario hace clic y no pasa nada visible</p>
+                                <p><strong>Solución:</strong> Spinner, skeleton loader o botón deshabilitado con "Procesando..."</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">📊</div>
+                            <div class="error-content">
+                                <h4>Tablas sin paginación</h4>
+                                <p><strong>Error:</strong> Cargar 10,000 registros de una vez</p>
+                                <p><strong>Solución:</strong> Paginación real en backend + límites de 20-50 por página</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">🔍</div>
+                            <div class="error-content">
+                                <h4>Búsquedas que requieren recarga</h4>
+                                <p><strong>Error:</strong> Buscar recarga toda la página</p>
+                                <p><strong>Solución:</strong> Búsqueda en tiempo real con JavaScript o AJAX</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">📱</div>
+                            <div class="error-content">
+                                <h4>Tablas que no se ven en móvil</h4>
+                                <p><strong>Error:</strong> Tablas de 10 columnas que rompen el layout</p>
+                                <p><strong>Solución:</strong> Scroll horizontal o conversión a tarjetas</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">🎨</div>
+                            <div class="error-content">
+                                <h4>Uso excesivo de colores</h4>
+                                <p><strong>Error:</strong> Cada elemento de un color diferente</p>
+                                <p><strong>Solución:</strong> Paleta limitada (3-5 colores máximo)</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">⚡</div>
+                            <div class="error-content">
+                                <h4>Botones dobles</h4>
+                                <p><strong>Error:</strong> El usuario hace clic varias veces porque no hay feedback</p>
+                                <p><strong>Solución:</strong> Deshabilita el botón al hacer clic hasta que termine la acción</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">📝</div>
+                            <div class="error-content">
+                                <h4>Mensajes de error técnicos</h4>
+                                <p><strong>Error:</strong> "Error 500: Null pointer exception at line 247"</p>
+                                <p><strong>Solución:</strong> "Ocurrió un error. Por favor intenta de nuevo o contacta soporte"</p>
+                            </div>
+                        </div>
+
+                        <div class="error-item">
+                            <div class="error-icon">🔐</div>
+                            <div class="error-content">
+                                <h4>Sin protección contra XSS</h4>
+                                <p><strong>Error:</strong> Mostrar datos del usuario sin sanitizar</p>
+                                <p><strong>Solución:</strong> Escapa todo output, usa textContent en lugar de innerHTML</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Revisa un proyecto anterior tuyo. Identifica al menos 3 de estos errores 
+                    y propón cómo los solucionarías.</p>
+                </div>
+            </section>
+
+            <!-- GLOSARIO -->
+            <section id="glosario" class="module">
+                <div class="module-header">
+                    <span class="module-number">📖</span>
+                    <div>
+                        <h2>Glosario UX/UI</h2>
+                        <p class="module-subtitle">Términos esenciales que debes conocer</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <div class="glossary">
+                        <div class="glossary-item">
+                            <h4>A/B Testing</h4>
+                            <p>Comparar dos versiones de una interfaz para ver cuál funciona mejor</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Accordion</h4>
+                            <p>Componente que expande/colapsa contenido para ahorrar espacio</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Affordance</h4>
+                            <p>Propiedad visual que sugiere cómo se usa un elemento (un botón parece presionable)</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Breadcrumb</h4>
+                            <p>Navegación que muestra la ruta: Inicio > Categoría > Subcategoría</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Call to Action (CTA)</h4>
+                            <p>Elemento que invita a realizar una acción (botón "Comprar ahora")</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Card</h4>
+                            <p>Contenedor rectangular con información agrupada</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Dark Pattern</h4>
+                            <p>Técnica de diseño engañosa que manipula al usuario</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Dropdown</h4>
+                            <p>Menú desplegable que muestra opciones al hacer clic</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>F-pattern</h4>
+                            <p>Patrón de lectura en web: los usuarios escanean en forma de F</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Hero Section</h4>
+                            <p>Sección principal en la parte superior de una página</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Modal</h4>
+                            <p>Ventana emergente que requiere interacción del usuario</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Persona</h4>
+                            <p>Representación ficticia de un usuario tipo con sus necesidades</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Placeholder</h4>
+                            <p>Texto dentro de un input que indica el formato esperado</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Responsive Design</h4>
+                            <p>Diseño que se adapta a diferentes tamaños de pantalla</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Skeleton Screen</h4>
+                            <p>Placeholder visual que muestra la estructura mientras carga</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Toast</h4>
+                            <p>Notificación temporal que aparece y desaparece automáticamente</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Tooltip</h4>
+                            <p>Texto emergente al pasar el cursor sobre un elemento</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>User Flow</h4>
+                            <p>Camino que sigue un usuario para completar una tarea</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Wireframe</h4>
+                            <p>Boceto de baja fidelidad de una interfaz</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h4>Wizard</h4>
+                            <p>Formulario dividido en pasos secuenciales</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECURSOS -->
+            <section id="recursos" class="module">
+                <div class="module-header">
+                    <span class="module-number">🔗</span>
+                    <div>
+                        <h2>Recursos Recomendados</h2>
+                        <p class="module-subtitle">Herramientas y referencias para seguir aprendiendo</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fas fa-paint-brush"></i> Diseño</h4>
+                            <ul>
+                                <li><a href="https://www.figma.com" target="_blank">Figma</a> - Diseño colaborativo</li>
+                                <li><a href="https://coolors.co" target="_blank">Coolors</a> - Generador de paletas</li>
+                                <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a> - Tipografías</li>
+                                <li><a href="https://fontawesome.com" target="_blank">Font Awesome</a> - Iconos</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-code"></i> Documentación</h4>
+                            <ul>
+                                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a> - Referencia HTML/CSS/JS</li>
+                                <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a> - Tutoriales CSS</li>
+                                <li><a href="https://web.dev" target="_blank">web.dev</a> - Mejores prácticas Google</li>
+                                <li><a href="https://caniuse.com" target="_blank">Can I Use</a> - Compatibilidad de navegadores</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-universal-access"></i> Accesibilidad</h4>
+                            <ul>
+                                <li><a href="https://www.w3.org/WAI" target="_blank">W3C WAI</a> - WCAG oficial</li>
+                                <li><a href="https://webaim.org" target="_blank">WebAIM</a> - Recursos de accesibilidad</li>
+                                <li><a href="https://contrast-ratio.com" target="_blank">Contrast Ratio</a> - Verificar colores</li>
+                                <li><a href="https://wave.webaim.org" target="_blank">WAVE</a> - Auditoría automática</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-tachometer-alt"></i> Rendimiento</h4>
+                            <ul>
+                                <li><a href="https://pagespeed.web.dev" target="_blank">PageSpeed Insights</a></li>
+                                <li><a href="https://webpagetest.org" target="_blank">WebPageTest</a></li>
+                                <li><a href="https://gtmetrix.com" target="_blank">GTmetrix</a></li>
+                                <li><a href="https://tinyjpg.com" target="_blank">TinyJPG</a> - Comprimir imágenes</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-lightbulb"></i> Inspiración</h4>
+                            <ul>
+                                <li><a href="https://dribbble.com" target="_blank">Dribbble</a> - Diseño visual</li>
+                                <li><a href="https://www.behance.net" target="_blank">Behance</a> - Portafolios</li>
+                                <li><a href="https://www.awwwards.com" target="_blank">Awwwards</a> - Mejores sitios web</li>
+                                <li><a href="https://collectui.com" target="_blank">Collect UI</a> - Patrones por componente</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-book"></i> Libros</h4>
+                            <ul>
+                                <li><strong>"Don't Make Me Think"</strong> - Steve Krug</li>
+                                <li><strong>"Designing Interfaces"</strong> - Jenifer Tidwell</li>
+                                <li><strong>"The Design of Everyday Things"</strong> - Don Norman</li>
+                                <li><strong>"Refactoring UI"</strong> - Adam Wathan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GITHUB PAGES -->
+            <section id="github" class="module">
+                <div class="module-header">
+                    <span class="module-number">🚀</span>
+                    <div>
+                        <h2>Cómo publicar en GitHub Pages</h2>
+                        <p class="module-subtitle">Guía paso a paso para subir tu sitio</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        GitHub Pages te permite publicar sitios web estáticos gratis directamente 
+                        desde un repositorio de GitHub. Perfecto para portafolios, documentación 
+                        y proyectos como esta guía.
+                    </p>
+
+                    <h3>Paso 1: Crear cuenta en GitHub</h3>
+                    <ol>
+                        <li>Ve a <a href="https://github.com" target="_blank">github.com</a></li>
+                        <li>Si no tienes cuenta, haz clic en <strong>"Sign up"</strong></li>
+                        <li>Completa el registro (es gratis)</li>
+                    </ol>
+
+                    <h3>Paso 2: Crear un nuevo repositorio</h3>
+                    <ol>
+                        <li>Haz clic en el botón <strong>"+"</strong> en la esquina superior derecha</li>
+                        <li>Selecciona <strong>"New repository"</strong></li>
+                        <li>Configura el repositorio:
+                            <ul>
+                                <li><strong>Repository name</strong>: <code>design-web-guide</code> (o el nombre que prefieras)</li>
+                                <li><strong>Description</strong>: "Guía de diseño de interfaces web"</li>
+                                <li><strong>Public</strong>: ✅ Marca esta opción (requerido para GitHub Pages gratis)</li>
+                                <li><strong>Add a README</strong>: ✅ Marca esta opción</li>
+                            </ul>
+                        </li>
+                        <li>Haz clic en <strong>"Create repository"</strong></li>
+                    </ol>
+
+                    <h3>Paso 3: Subir tus archivos</h3>
+                    <ol>
+                        <li>Dentro de tu nuevo repositorio, haz clic en <strong>"Add file"</strong> → <strong>"Upload files"</strong></li>
+                        <li>Arrastra todos los archivos del proyecto:
+                            <ul>
+                                <li><code>index.html</code></li>
+                                <li><code>html-css.html</code></li>
+                                <li><code>componentes.html</code></li>
+                                <li><code>avanzado.html</code></li>
+                                <li><code>extras.html</code></li>
+                                <li><code>styles.css</code></li>
+                                <li><code>script.js</code></li>
+                                <li><code>README.md</code></li>
+                            </ul>
+                        </li>
+                        <li>En el mensaje de commit, escribe: "Primera versión de la guía"</li>
+                        <li>Haz clic en <strong>"Commit changes"</strong></li>
+                    </ol>
+
+                    <h3>Paso 4: Activar GitHub Pages</h3>
+                    <ol>
+                        <li>Ve a la pestaña <strong>"Settings"</strong> del repositorio</li>
+                        <li>En el menú lateral izquierdo, busca y haz clic en <strong>"Pages"</strong></li>
+                        <li>En la sección <strong>"Build and deployment"</strong>:
+                            <ul>
+                                <li><strong>Source</strong>: Selecciona <strong>"Deploy from a branch"</strong></li>
+                                <li><strong>Branch</strong>: Selecciona <strong>"main"</strong> y <strong>"/ (root)"</strong></li>
+                            </ul>
+                        </li>
+                        <li>Haz clic en <strong>"Save"</strong></li>
+                    </ol>
+
+                    <h3>Paso 5: ¡Listo! Tu página está en línea</h3>
+                    <ol>
+                        <li>Espera 1-2 minutos mientras GitHub construye tu sitio</li>
+                        <li>Puedes ver el progreso en la pestaña <strong>"Actions"</strong> del repositorio</li>
+                        <li>Una vez completado, tu página estará disponible en:
+                            <br><code>https://TU-USUARIO.github.io/design-web-guide/</code>
+                        </li>
+                        <li>La URL también aparecerá en <strong>Settings → Pages</strong></li>
+                    </ol>
+
+                    <div class="callout callout-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Para actualizar tu sitio:</strong> Solo edita cualquier archivo en GitHub 
+                            y haz commit. GitHub Pages se actualiza automáticamente en 1-2 minutos.
+                        </div>
+                    </div>
+
+                    <h3>Problemas comunes</h3>
+                    <div class="errors-list">
+                        <div class="error-item">
+                            <div class="error-icon">⏱️</div>
+                            <div class="error-content">
+                                <h4>La página no aparece después de 5 minutos</h4>
+                                <p><strong>Solución:</strong> Verifica en Actions que el deploy completó sin errores. 
+                                A veces toma hasta 10 minutos la primera vez.</p>
+                            </div>
+                        </div>
+                        <div class="error-item">
+                            <div class="error-icon">🔗</div>
+                            <div class="error-content">
+                                <h4>Los estilos CSS no cargan</h4>
+                                <p><strong>Solución:</strong> Asegúrate de que las rutas en los <code>&lt;link&gt;</code> 
+                                y <code>&lt;script&gt;</code> son relativas (sin <code>/</code> al inicio).</p>
+                            </div>
+                        </div>
+                        <div class="error-item">
+                            <div class="error-icon">📁</div>
+                            <div class="error-content">
+                                <h4>Página en blanco</h4>
+                                <p><strong>Solución:</strong> Verifica que tu archivo principal se llame 
+                                <code>index.html</code> (minúsculas, exactamente así).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto final</h3>
+                    <p>Publica esta guía completa en GitHub Pages y comparte el enlace con tus compañeros. 
+                    ¡Felicidades! Has creado y publicado una guía profesional de diseño web. 🎉</p>
+                </div>
+            </section>
+
+            <!-- Navegación final -->
+            <nav class="section-nav">
+                <div class="section-nav-prev">
+                    <span>Anterior</span>
+                    <a href="avanzado.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Temas Avanzados
+                    </a>
+                </div>
+                <div class="section-nav-next">
+                    <span>¡Completado!</span>
+                    <a href="index.html" class="btn btn-primary">
+                        Volver al inicio <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </main>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

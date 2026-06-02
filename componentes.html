@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Componentes de interfaz, librerías recomendadas y patrones de diseño">
+    <title>Componentes y Librerías | Diseño de Interfaces Web</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-palette"></i>
+                <span>UI/UX Guide</span>
+            </div>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h4>Esta sección</h4>
+                <a href="#controles">Controles Comunes</a>
+                <a href="#mejorados">Controles con JS</a>
+                <a href="#librerias">Librerías</a>
+                <a href="#patrones">Patrones de Diseño</a>
+            </div>
+            
+            <div class="nav-section">
+                <h4>Otras secciones</h4>
+                <a href="index.html">Fundamentos UX/UI</a>
+                <a href="html-css.html">HTML, CSS y Responsive</a>
+                <a href="avanzado.html">Temas Avanzados</a>
+                <a href="extras.html">Extras y Recursos</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        
+        <div class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="topbar-title">Componentes y Librerías</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <header class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Parte 3 de 5</span>
+                <h1>Componentes y Librerías</h1>
+                <p class="hero-description">
+                    Los bloques de construcción que usarás el 90% del tiempo: botones, tablas, 
+                    modales, validaciones y librerías que te ahorran horas de trabajo.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>4 Módulos</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>~1.5h lectura</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- MÓDULO: Controles Comunes -->
+            <section id="controles" class="module">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <div>
+                        <h2>Controles Comunes de Interfaz</h2>
+                        <p class="module-subtitle">Los componentes que usarás el 90% del tiempo</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Estos son los componentes que aparecen en casi cualquier sistema administrativo. 
+                        Dominarlos te dará velocidad y consistencia.
+                    </p>
+
+                    <h3>Botones: jerarquía visual</h3>
+                    <p>No todos los botones son iguales. Usa la jerarquía para guiar al usuario.</p>
+                    
+                    <div class="demo-buttons">
+                        <button class="btn btn-primary">Primario</button>
+                        <button class="btn btn-secondary">Secundario</button>
+                        <button class="btn btn-danger">Peligro</button>
+                        <button class="btn btn-ghost">Fantasma</button>
+                        <button class="btn btn-primary" disabled>Deshabilitado</button>
+                    </div>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.btn {
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}</code></pre>
+                    </div>
+
+                    <h3>Tablas de datos</h3>
+                    <p>Las tablas son el corazón de los sistemas administrativos.</p>
+                    
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.data-table th {
+    background: var(--color-surface);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.data-table tbody tr:hover {
+    background: var(--color-surface);
+}
+
+/* Responsive: scroll horizontal en móvil */
+@media (max-width: 768px) {
+    .data-table-responsive {
+        overflow-x: auto;
+    }
+}</code></pre>
+                    </div>
+
+                    <h3>Modales / Diálogos</h3>
+                    <p>Para confirmaciones, formularios secundarios y detalles sin cambiar de página.</p>
+                    
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- Overlay + Modal --&gt;
+&lt;div class="modal-overlay" id="modal"&gt;
+    &lt;div class="modal" role="dialog" aria-labelledby="modal-title"&gt;
+        &lt;header class="modal-header"&gt;
+            &lt;h3 id="modal-title"&gt;Confirmar acción&lt;/h3&gt;
+            &lt;button class="modal-close" aria-label="Cerrar"&gt;×&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;div class="modal-body"&gt;
+            &lt;p&gt;¿Estás seguro de que deseas eliminar este registro?&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;footer class="modal-footer"&gt;
+            &lt;button class="btn btn-secondary" data-close&gt;Cancelar&lt;/button&gt;
+            &lt;button class="btn btn-danger"&gt;Eliminar&lt;/button&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.2s;
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+}</code></pre>
+                    </div>
+
+                    <h3>Notificaciones Toast</h3>
+                    <p>Mensajes temporales que aparecen y desaparecen automáticamente.</p>
+                    
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border-left: 4px solid var(--color-success);
+    animation: slideInRight 0.3s ease-out;
+    z-index: 1001;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}</code></pre>
+                    </div>
+
+                    <h3>Badges y etiquetas de estado</h3>
+                    <p>Para indicar estados en tablas y tarjetas.</p>
+                    
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Crea un sistema de 3 botones (primario, secundario, peligro) con estados 
+                    hover, active y disabled. Añade una micro-animación al hacer hover.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Controles Mejorados con JS -->
+            <section id="mejorados" class="module">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <div>
+                        <h2>Controles Mejorados con JavaScript</h2>
+                        <p class="module-subtitle">Lleva tu interfaz al siguiente nivel</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Los controles nativos del navegador son limitados. Con JavaScript 
+                        puedes crear experiencias mucho más ricas y amigables.
+                    </p>
+
+                    <h3>Validación en tiempo real</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">const input = document.getElementById('cedula');
+const errorMsg = document.querySelector('.error-message');
+
+input.addEventListener('input', (e) => {
+    const value = e.target.value;
+    const pattern = /^(V|E)-\d{7,8}$/;
+    
+    if (value === '') {
+        input.classList.remove('is-valid', 'is-invalid');
+        errorMsg.textContent = '';
+    } else if (pattern.test(value)) {
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
+        errorMsg.textContent = '';
+    } else {
+        input.classList.remove('is-valid');
+        input.classList.add('is-invalid');
+        errorMsg.textContent = 'Formato: V-12345678 o E-12345678';
+    }
+});</code></pre>
+                    </div>
+
+                    <h3>Máscara de entrada para cédula venezolana</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">function maskCedula(input) {
+    input.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, ''); // Solo números
+        
+        if (value.length === 0) {
+            e.target.value = '';
+            return;
+        }
+        
+        // Detectar si empieza con V o E
+        const firstChar = value.charAt(0);
+        let prefix = 'V';
+        
+        if (firstChar === '1' || firstChar === '2') {
+            prefix = 'V';
+        } else if (firstChar === '8' || firstChar === '9') {
+            prefix = 'E';
+        }
+        
+        // Limitar a 8 dígitos después del prefijo
+        value = value.slice(0, 8);
+        e.target.value = `${prefix}-${value}`;
+    });
+}
+
+maskCedula(document.getElementById('cedula'));</code></pre>
+                    </div>
+
+                    <h3>Máscara para teléfono venezolano</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">function maskTelefono(input) {
+    input.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        // Limitar a 11 dígitos (0414-1234567)
+        value = value.slice(0, 11);
+        
+        if (value.length <= 4) {
+            e.target.value = value;
+        } else {
+            e.target.value = value.slice(0, 4) + '-' + value.slice(4);
+        }
+    });
+}
+
+maskTelefono(document.getElementById('telefono'));</code></pre>
+                    </div>
+
+                    <h3>Selects dependientes (Estado → Ciudad)</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">const estados = {
+    'distrito-capital': ['Libertador'],
+    'miranda': ['Sucre', 'Plaza', 'Chacao', 'Baruta'],
+    'zulia': ['Maracaibo', 'San Francisco', 'Cabimas'],
+    'carabobo': ['Valencia', 'Puerto Cabello', 'Naguanagua']
+};
+
+const estadoSelect = document.getElementById('estado');
+const ciudadSelect = document.getElementById('ciudad');
+
+estadoSelect.addEventListener('change', (e) => {
+    const estado = e.target.value;
+    
+    // Limpiar ciudades anteriores
+    ciudadSelect.innerHTML = '<option value="">Seleccione...</option>';
+    
+    if (estado && estados[estado]) {
+        estados[estado].forEach(ciudad => {
+            const option = document.createElement('option');
+            option.value = ciudad.toLowerCase();
+            option.textContent = ciudad;
+            ciudadSelect.appendChild(option);
+        });
+        ciudadSelect.disabled = false;
+    } else {
+        ciudadSelect.disabled = true;
+    }
+});</code></pre>
+                    </div>
+
+                    <h3>Modal funcional (clase reusable)</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">class Modal {
+    constructor(id) {
+        this.overlay = document.getElementById(id);
+        this.modal = this.overlay.querySelector('.modal');
+        this.isOpen = false;
+        
+        this.init();
+    }
+    
+    init() {
+        // Cerrar al hacer clic fuera
+        this.overlay.addEventListener('click', (e) => {
+            if (e.target === this.overlay) this.close();
+        });
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) this.close();
+        });
+        
+        // Botones de cerrar
+        this.overlay.querySelectorAll('[data-close]').forEach(btn => {
+            btn.addEventListener('click', () => this.close());
+        });
+    }
+    
+    open() {
+        this.overlay.classList.add('active');
+        this.isOpen = true;
+        document.body.style.overflow = 'hidden';
+    }
+    
+    close() {
+        this.overlay.classList.remove('active');
+        this.isOpen = false;
+        document.body.style.overflow = '';
+    }
+}
+
+// Uso
+const modal = new Modal('mi-modal');
+document.getElementById('abrir-modal').addEventListener('click', () => {
+    modal.open();
+});</code></pre>
+                    </div>
+
+                    <h3>Confirmación elegante antes de eliminar</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-javascript">function confirmarEliminacion(id, nombre) {
+    const confirmed = confirm(
+        `¿Eliminar "${nombre}"?\n\nEsta acción no se puede deshacer.`
+    );
+    
+    if (confirmed) {
+        // Lógica de eliminación
+        fetch(`/api/items/${id}`, { method: 'DELETE' })
+            .then(res => res.json())
+            .then(data => {
+                showToast('Registro eliminado correctamente', 'success');
+                document.querySelector(`[data-id="${id}"]`).remove();
+            });
+    }
+}
+
+function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'slideInRight 0.3s reverse';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}</code></pre>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <i class="fas fa-hand-point-right"></i>
+                        <div>
+                            <strong>Regla de oro:</strong> Siempre confirma antes de acciones destructivas. 
+                            El usuario puede hacer clic por error. Un "¿Estás seguro?" bien puesto 
+                            puede evitar desastres.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Implementa una máscara para un RIF venezolano (J-12345678-9) 
+                    que se formatee automáticamente mientras el usuario escribe.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Librerías -->
+            <section id="librerias" class="module">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <div>
+                        <h2>Librerías Recomendadas</h2>
+                        <p class="module-subtitle">No reinventes la rueda</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        Existen librerías probadas que resuelven problemas comunes. 
+                        Úsalas sabiamente: no cargues 10 librerías si solo necesitas una.
+                    </p>
+
+                    <h3>Frameworks CSS</h3>
+                    <div class="library-grid">
+                        <div class="library-card">
+                            <h4><i class="fab fa-bootstrap"></i> Bootstrap</h4>
+                            <span class="library-tag">El más usado</span>
+                            <p>Sistema de grid, componentes pre-diseñados, ideal para prototipar rápido. 
+                            Muy popular en entornos empresariales venezolanos.</p>
+                            <code>~170KB (con JS)</code>
+                        </div>
+                        <div class="library-card">
+                            <h4><i class="fas fa-wind"></i> Tailwind CSS</h4>
+                            <span class="library-tag">Utility-first</span>
+                            <p>Clases utilitarias, altamente personalizable, cero estilos por defecto. 
+                            Curva de aprendizaje alta pero muy flexible.</p>
+                            <code>~10KB (producción)</code>
+                        </div>
+                        <div class="library-card">
+                            <h4><i class="fas fa-feather"></i> CSS Puro</h4>
+                            <span class="library-tag">Control total</span>
+                            <p>Sin dependencias, rendimiento óptimo, aprendizaje profundo. 
+                            Ideal cuando quieres control absoluto.</p>
+                            <code>0KB (solo tu código)</code>
+                        </div>
+                    </div>
+
+                    <h3>Librerías JavaScript ligeras</h3>
+                    <div class="data-table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Librería</th>
+                                    <th>Propósito</th>
+                                    <th>Tamaño</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Select2</strong></td>
+                                    <td>Selects con búsqueda y tags</td>
+                                    <td>~70KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Flatpickr</strong></td>
+                                    <td>Datepicker ligero y personalizable</td>
+                                    <td>~40KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DataTables</strong></td>
+                                    <td>Tablas con búsqueda, orden, paginación</td>
+                                    <td>~120KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SweetAlert2</strong></td>
+                                    <td>Alertas y confirmaciones hermosas</td>
+                                    <td>~50KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Chart.js</strong></td>
+                                    <td>Gráficos simples y responsive</td>
+                                    <td>~200KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quill.js</strong></td>
+                                    <td>Editor de texto enriquecido</td>
+                                    <td>~500KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inputmask</strong></td>
+                                    <td>Máscaras de entrada avanzadas</td>
+                                    <td>~40KB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Toastify</strong></td>
+                                    <td>Notificaciones tipo toast</td>
+                                    <td>~10KB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Ejemplo: Flatpickr en acción</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML + JS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- Incluir CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/flatpickr"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"&gt;&lt;/script&gt;
+
+&lt;input type="text" id="fecha-nacimiento" placeholder="Selecciona fecha"&gt;
+
+&lt;script&gt;
+flatpickr("#fecha-nacimiento", {
+    locale: "es",
+    dateFormat: "d/m/Y",
+    maxDate: "today",
+    disableMobile: false
+});
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3>Ejemplo: SweetAlert2</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML + JS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// Alerta simple
+Swal.fire('¡Guardado!', 'El registro fue exitoso', 'success');
+
+// Confirmación
+Swal.fire({
+    title: '¿Eliminar?',
+    text: "Esta acción no se puede deshacer",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#ef4444',
+    cancelButtonColor: '#6b7280',
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+}).then((result) => {
+    if (result.isConfirmed) {
+        // Lógica de eliminación
+        Swal.fire('¡Eliminado!', 'El registro fue eliminado', 'success');
+    }
+});
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3>Ejemplo: DataTables</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML + JS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!-- DataTables CSS y JS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"&gt;
+&lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+
+&lt;table id="mi-tabla"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Cédula&lt;/th&gt;&lt;th&gt;Acciones&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;Juan Pérez&lt;/td&gt;&lt;td&gt;V-12345678&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+$(document).ready(function() {
+    $('#mi-tabla').DataTable({
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+        },
+        pageLength: 10,
+        order: [[0, 'asc']]
+    });
+});
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <div class="callout callout-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Cuidado con el "librerísmo":</strong> Cargar muchas librerías 
+                            hace tu sitio lento. Evalúa si realmente necesitas cada una. 
+                            A veces 20 líneas de JS propio valen más que importar 100KB.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Integra Flatpickr en un campo de fecha con las siguientes configuraciones:
+                    <br>• Idioma español
+                    <br>• Solo permite fechas del último mes
+                    <br>• Deshabilita sábados y domingos</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO: Patrones -->
+            <section id="patrones" class="module">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <div>
+                        <h2>Patrones de Diseño Comunes</h2>
+                        <p class="module-subtitle">Soluciones probadas a problemas recurrentes</p>
+                    </div>
+                </div>
+
+                <div class="module-content">
+                    <p>
+                        En sistemas administrativos, ciertos patrones aparecen una y otra vez. 
+                        Conocerlos te ahorra tiempo y mejora la UX.
+                    </p>
+
+                    <h3>Patrón CRUD</h3>
+                    <p>El patrón más común: Crear, Leer, Actualizar, Eliminar.</p>
+                    <div class="pattern-flow">
+                        <div class="pattern-step">
+                            <i class="fas fa-list"></i>
+                            <strong>Listar</strong>
+                            <span>Tabla con búsqueda y filtros</span>
+                        </div>
+                        <div class="pattern-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="pattern-step">
+                            <i class="fas fa-plus"></i>
+                            <strong>Crear</strong>
+                            <span>Formulario modal o página nueva</span>
+                        </div>
+                        <div class="pattern-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="pattern-step">
+                            <i class="fas fa-edit"></i>
+                            <strong>Editar</strong>
+                            <span>Mismo formulario precargado</span>
+                        </div>
+                        <div class="pattern-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="pattern-step">
+                            <i class="fas fa-trash"></i>
+                            <strong>Eliminar</strong>
+                            <span>Confirmación obligatoria</span>
+                        </div>
+                    </div>
+
+                    <h3>Patrón Dashboard</h3>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div class="dashboard"&gt;
+    &lt;!-- Header con usuario y notificaciones --&gt;
+    &lt;header class="dashboard-header"&gt;
+        &lt;h1&gt;Bienvenido, Juan&lt;/h1&gt;
+        &lt;div class="user-menu"&gt;...&lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;!-- Tarjetas de resumen --&gt;
+    &lt;div class="stats-grid"&gt;
+        &lt;div class="stat-card"&gt;
+            &lt;div class="stat-icon"&gt;👥&lt;/div&gt;
+            &lt;div class="stat-content"&gt;
+                &lt;span class="stat-value"&gt;1,234&lt;/span&gt;
+                &lt;span class="stat-label"&gt;Usuarios activos&lt;/span&gt;
+                &lt;span class="stat-change positive"&gt;+12%&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Más tarjetas... --&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Tabla reciente + Gráfico --&gt;
+    &lt;div class="dashboard-main"&gt;
+        &lt;section class="recent-activity"&gt;...&lt;/section&gt;
+        &lt;section class="chart-container"&gt;...&lt;/section&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <h3>Patrón Maestro-Detalle</h3>
+                    <p>Ideal cuando tienes una lista y quieres ver detalles sin cambiar de página.</p>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>CSS</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-css">.master-detail {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: var(--space-lg);
+    height: calc(100vh - 60px);
+}
+
+.master {
+    overflow-y: auto;
+    border-right: 1px solid var(--color-border);
+    padding-right: var(--space-lg);
+}
+
+.detail {
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .master-detail {
+        grid-template-columns: 1fr;
+    }
+    .detail {
+        display: none;
+    }
+    .detail.active {
+        display: block;
+    }
+}</code></pre>
+                    </div>
+
+                    <h3>Patrón Wizard (Formulario por pasos)</h3>
+                    <p>Para formularios largos que abrumarían en una sola página.</p>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div class="wizard"&gt;
+    &lt;!-- Indicador de pasos --&gt;
+    &lt;div class="wizard-steps"&gt;
+        &lt;div class="step active"&gt;
+            &lt;span class="step-number"&gt;1&lt;/span&gt;
+            &lt;span class="step-label"&gt;Datos personales&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="step"&gt;
+            &lt;span class="step-number"&gt;2&lt;/span&gt;
+            &lt;span class="step-label"&gt;Dirección&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="step"&gt;
+            &lt;span class="step-number"&gt;3&lt;/span&gt;
+            &lt;span class="step-label"&gt;Confirmación&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Contenido de cada paso --&gt;
+    &lt;div class="wizard-content"&gt;
+        &lt;div class="wizard-panel active"&gt;...&lt;/div&gt;
+        &lt;div class="wizard-panel"&gt;...&lt;/div&gt;
+        &lt;div class="wizard-panel"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Navegación --&gt;
+    &lt;div class="wizard-nav"&gt;
+        &lt;button class="btn btn-secondary" id="prev"&gt;Anterior&lt;/button&gt;
+        &lt;button class="btn btn-primary" id="next"&gt;Siguiente&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <h3>Manejo de estados</h3>
+                    <p>Toda interfaz debe manejar 4 estados: vacío, cargando, error y éxito.</p>
+                    <div class="states-grid">
+                        <div class="state-card">
+                            <i class="fas fa-inbox"></i>
+                            <h4>Vacío</h4>
+                            <p>Invita a crear el primer registro</p>
+                        </div>
+                        <div class="state-card">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>Cargando</h4>
+                            <p>Skeleton loaders o spinners</p>
+                        </div>
+                        <div class="state-card">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h4>Error</h4>
+                            <p>Mensaje claro con opción de reintentar</p>
+                        </div>
+                        <div class="state-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Éxito</h4>
+                            <p>Feedback visual y redirección suave</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge">
+                    <h3><i class="fas fa-trophy"></i> Reto rápido</h3>
+                    <p>Diseña el patrón CRUD para una entidad de tu elección. Dibuja en papel:
+                    <br>• La tabla con búsqueda
+                    <br>• El formulario de creación
+                    <br>• El modal de confirmación de eliminación</p>
+                </div>
+            </section>
+
+            <!-- Navegación entre secciones -->
+            <nav class="section-nav">
+                <div class="section-nav-prev">
+                    <span>Anterior</span>
+                    <a href="html-css.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> HTML, CSS y Responsive
+                    </a>
+                </div>
+                <div class="section-nav-next">
+                    <span>Siguiente</span>
+                    <a href="avanzado.html" class="btn btn-primary">
+                        Temas Avanzados <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </main>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
